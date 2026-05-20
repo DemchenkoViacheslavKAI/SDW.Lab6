@@ -35,12 +35,12 @@ public class Main {
     }
 
     private static List<Integer> readIntegerList(Scanner scanner, int size) {
-        List<Integer> numbers = new ArrayList<>();
+        List<Integer> numbers = new ArrayList<>(Collections.nCopies(size, 0));
 
         System.out.println("\nВведіть " + size + " цілих чисел для списку ArrayList:");
         for (int i = 0; i < size; i++) {
             int value = readInteger(scanner, "Елемент [" + i + "]: ");
-            numbers.add(value);
+            numbers.set(i, value);
             System.out.println("Додано число " + value + " до списку.");
         }
 
